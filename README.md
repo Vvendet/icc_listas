@@ -1,0 +1,3 @@
+# icc_listas
+
+Repositório para guardar resoluções de atividades da disciplina de Introdução à Ciência da Computação...
