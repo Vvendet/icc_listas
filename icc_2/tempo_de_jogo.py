@@ -1,13 +1,24 @@
-tudo = input().split()
+"""Leia a hora inicial, minuto inicial, hora final e minuto final de um jogo. A seguir calcule a duração do jogo, considerando que o jogo pode acabar em um dia e terminar em outro, tendo uma duração máxima de 24 horas."""
 
-tempo_inicial = tudo[:2]
-tempo_final = tudo[2::]
+x = input().split()
+h1 = int(x[0])
+h2 = int(x[2])
 
-
-tempo =  ((int(tempo_final[0]) - int(tempo_inicial[0]))**2  + (int(tempo_final[1]) - int(tempo_inicial[1]))**2)**0.5
-if tempo <= 1:
-    tempo = 1440 - tempo
-    print(f'O jogo durou {int(tempo//60)} hora(s) e {int(tempo%60)} minuto(s).')
+m1 = int(x[1])
+m2 = int(x[3])
+if m1 < m2:
+    minute = m2 - m1
 else:
-    tempo = 1440 + tempo 
-    print(f'O jogo durou {int(24 - tempo//60)} hora(s) e {int(60 - int(tempo%60))} minuto(s).')
+    minute = (60 - m1) + m2
+if h1 < h2:
+    t = h2 - h1
+else:
+    t = (24 - h1) + h2
+
+
+if minute > 0 and minute < 60:
+    t -= minute/60
+    t = round(t)
+elif minute == 60:
+    minute = 0
+print(f'O jogo durou {int(t)} hora(s) e {minute} minuto(s).')
