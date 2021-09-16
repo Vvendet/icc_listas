@@ -6,7 +6,6 @@ a saída deve ser 45, que é equivalente a: 5 + 7 + 9 + 11 + 13, para a entrada 
 que é equivalente a: 7 + 9 + 11 + 13. No final, imprima também a 
 maior e a menor soma entre todos os casos de teste, e a média destas duas últimas somas (a maior e a menor).
 """
-
 n = int(input())
 somas = []
 for i in range(0,n):
