@@ -6,7 +6,7 @@ Como um bom tio que é, e um exímio
 programador, você decide que a melhor 
 abordagem é escrever um programa que faça as correções automaticamente."""
 
-ef capt(text):
+def capt(text):
     boole = True
     stri = ''
     for k in text:
