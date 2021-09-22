@@ -6,16 +6,23 @@ Como um bom tio que é, e um exímio
 programador, você decide que a melhor 
 abordagem é escrever um programa que faça as correções automaticamente."""
 
-texto = input().split('.')
-texto = [list(texto[0]),list(texto[1])]
-formated_text = []
-for i in range(0,len(texto)):
-    for j in texto[i]:
-        if (j != ''):
-            print(j)
-            formated_text.append(j.upper())
-            texto[i].remove(j)
-            break
+ef capt(text):
+    boole = True
+    stri = ''
+    for k in text:
+        if boole == True and k != '.':
+            if k != ' ' and k != '' and k != '.':
+                stri += k.upper()
+                boole = False
+            else:
+                stri += k
+        elif k == '.' :
+            stri += k
+            boole = True
         else:
-            formated_text.append(j)
-            texto[i].remove(j)
+            stri += k
+    return stri
+
+
+text = capt(input(''))
+print (text)
