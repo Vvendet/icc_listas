@@ -2,12 +2,21 @@ quant_brinquedos = int(input())
 brinquedos = input().split()
 ordem_original = brinquedos[:]
 
+
+def pegar_indice(l,x):
+    for i in range(0,len(l)):
+        if l[i] == x:
+            return i
+
+
 for i in range(5):
    
     ordem = input().split()
 
     for j in range(quant_brinquedos):
         if ordem[0] == brinquedos[j]:
+
+
             if ordem[1] == 'E':
                 try:
                     k=0
@@ -20,8 +29,12 @@ for i in range(5):
                         k +=1
                  
                 except:
-                    
-                    pass
+                    k= 0
+                    while k < len(brinquedos) - pegar_indice(brinquedos,ordem[0]):
+                        aux = brinquedos[j-k-1]
+                        brinquedos[j-k-1] = brinquedos[j-k]
+                        brinquedos[j-k] = aux
+                        k +=1
                 
                 break
 
@@ -38,7 +51,12 @@ for i in range(5):
                         
     
                 except: 
-                    pass
+                    k= 0
+                    while k < len(brinquedos) - pegar_indice(brinquedos,ordem[0]):
+                        aux = brinquedos[j-k-1]
+                        brinquedos[j-k-1] = brinquedos[j-k]
+                        brinquedos[j-k] = aux
+                        k +=1
                 
                 break
 
